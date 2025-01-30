@@ -1,3 +1,4 @@
+import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 from pandas_datareader import data as pdr
@@ -7,6 +8,12 @@ import numpy as np
 # Configuration
 plt.style.use('ggplot')
 plt.rcParams['figure.figsize'] = (12, 6)
+st.set_page_config(
+    page_title="Fed Net Liquidity",
+    page_icon="📊",
+    layout="wide"
+)
+[_, c, _] = st.columns([1, 15, 1])
 
 def fetch_fred_data():
     """Fetch FRED data for the last 7 days"""
